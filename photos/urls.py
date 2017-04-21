@@ -8,7 +8,7 @@ urlpatterns = [
     url(r'^$', views.view, name="view"),
     url(r'^(?P<id>\d+)/$', views.detail, name="detail"),
     url(r'^upload/$', views.upload, name="upload"),
-    url(r'^delete/$', views.delete, name="delete"),
+    # url(r'^delete/$', views.delete, name="delete"),
 ]
 
 if settings.DEBUG:
