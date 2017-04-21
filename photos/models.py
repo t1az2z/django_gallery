@@ -2,7 +2,6 @@ from django.db import models
 from .validators import validate_file_extension
 
 
-# Create your models here.
 class Photo(models.Model):
     # Класс для отображения фото
 
