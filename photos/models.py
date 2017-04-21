@@ -1,4 +1,5 @@
 from django.db import models
+from .validators import validate_file_extension
 
 
 # Create your models here.
@@ -10,7 +11,8 @@ class Photo(models.Model):
     height = models.IntegerField(default=0)
     image = models.ImageField(
         null=False, blank=False,
-        width_field='width', height_field='height', )
+        width_field='width', height_field='height',
+        validators=[validate_file_extension])
     timestamp = models.DateTimeField(auto_now_add=True)
     commentary = models.TextField(max_length=300)
 

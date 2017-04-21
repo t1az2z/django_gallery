@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
+
 
 # Create your views here.
 from .models import Photo
@@ -30,11 +31,12 @@ def upload(request):
     if form.is_valid():
         instance = form.save(commit=False)
         instance.save()
+        return HttpResponseRedirect('/')
     context = {
-        "form": form
+        "form": form,
     }
     return render(request, "post_photo.html", context)
 
 
-def delete(request):
-    return HttpResponse("<h1>delete in work</h1>")
+# def delete(request):
+#     return HttpResponse("<h1>delete in work</h1>")
