@@ -57,7 +57,7 @@
               <p style="font-size: 20px"> {{photo.title}}</p>
               <img src = "{{ photo.image.url }}" class="img-responsive" width="320" height="320" />
               </a>
-              {{ photo.timestamp }}
+              <font size="3"> {{ photo.timestamp }} <b> Views: {{ photo.views }} </b></font>
             </div>
           {% endfor %}
       </div>

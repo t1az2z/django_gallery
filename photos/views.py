@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
+from django.db.models import F
 
 
 # Create your views here.
@@ -18,6 +19,7 @@ def view(request):
 
 def detail(request, id):
     instance = get_object_or_404(Photo, id=id)
+    Photo.objects.filter(id=id).update(views=F('views')+1)
     context = {
         "title": instance.title,
         "instance": instance,
