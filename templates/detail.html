@@ -49,10 +49,10 @@
 
   <div class="container">
     <h1>{{ title }}</h1>
-    {{ instance.timestamp }}
+    {{ instance.timestamp }}  {{ instance.views }}
     <img src = "{{ instance.image.url }}" class="img-responsive"  />
     <p style="font-size: 25px"> User commentary:</p>
-    {{ instance.commentary }}
+    <font size="3"> {{ photo.timestamp }} <strong> Views: {{ photo.views }} </strong></font>
   <div class="starter-template">
         <p class="lead"><br></p>
       </div>

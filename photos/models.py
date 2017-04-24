@@ -14,6 +14,7 @@ class Photo(models.Model):
         validators=[validate_file_extension])
     timestamp = models.DateTimeField(auto_now_add=True)
     commentary = models.TextField(max_length=300)
+    views = models.IntegerField(default=0, blank=True)
 
     def __unicode__(self):
         return self.title
